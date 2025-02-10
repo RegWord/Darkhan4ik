@@ -20,7 +20,11 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: ['http://localhost:3000', 'https://darkhan4ik.vercel.app']
+    origin: [
+      'http://localhost:3000',
+      'https://darkhan4ik.vercel.app',
+      'https://darkhan4ik-backend.vercel.app'
+    ]
   })
 );
 
