@@ -41,6 +41,15 @@ app.get('*', (req, res) => {
   res.sendFile(indexFilePath);
 });
 
+// Добавьте обработку ошибок перед app.listen
+process.on('unhandledRejection', (error) => {
+  console.error('Unhandled Rejection:', error);
+});
+
+process.on('uncaughtException', (error) => {
+  console.error('Uncaught Exception:', error);
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log('listening on port ' + PORT);
